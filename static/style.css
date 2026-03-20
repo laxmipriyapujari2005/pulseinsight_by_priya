@@ -1,0 +1,151 @@
+body{
+
+font-family: 'Segoe UI', sans-serif;
+background: linear-gradient(135deg,#4facfe,#8e54e9);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+margin:0;
+
+}
+
+
+/* Card container */
+
+.container{
+
+background:white;
+padding:35px;
+border-radius:18px;
+width:420px;
+box-shadow:0 15px 40px rgba(0,0,0,0.25);
+transition:0.3s;
+
+}
+
+.container:hover{
+
+transform:translateY(-5px);
+
+}
+
+
+h1{
+
+text-align:center;
+margin-bottom:25px;
+color:#333;
+
+}
+
+
+label{
+
+font-weight:bold;
+color:#444;
+
+}
+
+
+input{
+
+width:100%;
+padding:12px;
+margin:10px 0 15px 0;
+border-radius:8px;
+border:1px solid #ccc;
+font-size:14px;
+transition:0.2s;
+
+}
+
+input:focus{
+
+border-color:#5f9cff;
+outline:none;
+box-shadow:0 0 5px rgba(95,156,255,0.5);
+
+}
+
+
+/* Button */
+
+button{
+
+width:100%;
+padding:13px;
+background:linear-gradient(135deg,#5f9cff,#8e54e9);
+border:none;
+color:white;
+font-size:16px;
+border-radius:8px;
+cursor:pointer;
+transition:0.3s;
+
+}
+
+button:hover{
+
+background:linear-gradient(135deg,#4a7de0,#7a40d8);
+transform:scale(1.03);
+
+}
+
+
+/* Result Section */
+
+#result{
+
+margin-top:20px;
+
+}
+
+
+/* Suggestions */
+
+.suggestion{
+
+background:#f3f6ff;
+padding:10px;
+border-radius:6px;
+margin-top:8px;
+border-left:5px solid #5f9cff;
+
+}
+
+
+/* Pattern insights */
+
+.insight{
+
+background:#e8f9f0;
+padding:10px;
+border-radius:6px;
+margin-top:8px;
+border-left:5px solid #2ecc71;
+
+}
+
+
+/* Hide analyzer initially */
+
+#habitPage{
+
+display:none;
+
+}
+h2{
+color:#5f9cff;
+margin-top:10px;
+}
+
+h3{
+margin-top:20px;
+color:#333;
+}
+
+p{
+font-size:14px;
+line-height:1.6;
+}

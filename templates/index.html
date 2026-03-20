@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit & Stress Analyzer</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            background: linear-gradient(135deg, #e3f2fd 0%, #f1f8e9 100%); 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+            margin: 0; 
+        }
+
+        .container { 
+            background: rgba(255, 255, 255, 0.95); 
+            padding: 40px; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
+            width: 100%; 
+            max-width: 420px; 
+        }
+
+        h1 { color: #4a4a4a; text-align: center; margin-bottom: 25px; font-weight: 600; }
+        label { display: block; margin-top: 15px; font-weight: 600; color: #666; font-size: 14px; }
+        input, select { 
+            width: 100%; 
+            padding: 12px; 
+            margin-top: 8px; 
+            border: 1.5px solid #e0e0e0; 
+            border-radius: 8px; 
+            box-sizing: border-box; 
+            transition: border-color 0.3s;
+            font-size: 15px;
+        }
+        input:focus { border-color: #a5d6a7; outline: none; }
+
+        button { 
+            width: 100%; 
+            padding: 14px; 
+            background-color: #81c784; 
+            color: pink; 
+            border: none; 
+            border-radius: 8px; 
+            margin-top: 15px; 
+            cursor: pointer; 
+            font-size: 16px; 
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        button:hover { background-color: #66bb6a; }
+
+        #result, #stressResult { margin-top: 20px; padding: 18px; border-radius: 10px; display: none; }
+        .high-stress { background-color: #ffb3ba; color: #7f0000; border-left: 6px solid #d32f2f; }
+        .mod-stress { background-color: #ffe082; color: #874600; border-left: 6px solid #ffa000; }
+        .low-stress { background-color: #a5d6a7; color: #1b4332; border-left: 6px solid #2d6a4f; }
+        h3 { margin-top: 0; font-size: 18px; }
+        h4 { margin-top: 0; margin-bottom: 10px; }
+        ul { padding-left: 20px; margin-bottom: 0; }
+        li { margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+
+<div class="container" id="loginPage">
+    <h1>Welcome Back</h1>
+    <label>Username</label>
+    <input type="text" id="username" placeholder="Enter username">
+    <label>Password</label>
+    <input type="password" id="password" placeholder="••••••••">
+    <button onclick="login()">Sign In</button>
+</div>
+
+<div class="container" id="habitPage" style="display:none;">
+    <h1>Habit Analyzer</h1>
+    
+    <label>Age</label>
+    <input type="number" id="age" placeholder="e.g. 25">
+
+    <label>Profile</label>
+    <select id="role" onchange="toggleFields()">
+        <option value="student">Student</option>
+        <option value="employee">Worker / Employee</option>
+    </select>
+
+    <label id="taskLabel">Study Hours</label>
+    <input type="number" id="taskHours" placeholder="Hours per day">
+
+    <label>Sleep Hours</label>
+    <input type="number" id="sleep" placeholder="e.g. 7">
+
+    <label>Screen Time</label>
+    <input type="number" id="screen" placeholder="e.g. 6">
+
+    <label>Calories Burnt</label>
+    <input type="number" id="calories" placeholder="e.g. 300">
+
+    <!-- Smart Sync Button -->
+    <button type="button" onclick="smartSync()" id="smartSyncBtn">Smart Sync</button>
+
+    <button onclick="generate()">Analyze My Routine</button>
+
+    <div id="stressResult"></div>
+    <div id="result"></div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
